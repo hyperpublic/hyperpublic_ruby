@@ -1,0 +1,15 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+\#*
+\.#*
+config/s3.yml
+.autotest
+vendor/bundler_gems
+.bundle/*
+.DS_Store
+*.swp
+*.orig
+pkg/
+autotest/
