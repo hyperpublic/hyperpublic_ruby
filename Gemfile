@@ -13,7 +13,7 @@ group :development do
   gem 'ruby-debug'
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.5.1"
-  gem "hashie", "~>0.4.0"
+  gem "hashie", "~>1.0.0"
   gem "httparty", "~>0.6.1"
   gem "rest-client", "~>1.5.1"
   gem "multi_json", "~>0.0.5"
