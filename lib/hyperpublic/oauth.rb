@@ -33,7 +33,8 @@ module Hyperpublic
     end
 
     def post(uri, body, options={})
-      @token.post(@api_endpoint + uri, body.merge("client_id" => @ctoken, "client_secret" => @csecret), {"Content-Type" => 'application/json'})
+      body.merge!("client_id" => @ctoken, "client_secret" => @csecret)
+      @token.post(@api_endpoint + uri, body, {"Content-Type" => 'application/json'})
     end
 
     def put(uri, body, options={})
