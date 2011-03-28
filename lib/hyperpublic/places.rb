@@ -14,7 +14,7 @@ module Hyperpublic
         perform_get("/places/#{params}")
       else
         q = Addressable::URI.new
-        q.query_values = params 
+        q.query_values = stringify(params)
         perform_get("/places?#{q.query}")
       end
     end
@@ -75,12 +75,6 @@ module Hyperpublic
 
     def photos(id)
       perform_get("places/#{id}/photo")
-    end
-
-private
-    def tags_str(tags)
-      tags_str = (tags.is_a? Array) ? tags.join(",") : tags
-      tags_str
     end
 
   end

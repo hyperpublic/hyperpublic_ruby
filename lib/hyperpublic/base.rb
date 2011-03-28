@@ -34,15 +34,6 @@ module Hyperpublic
       perform_get("/photos", query)
     end
 
-    def photo_create(object_type, object_id, photo_options={})
-      case
-        when photo_options[:photo_file]
-          then perform_post_multi("/photos", :body => {:photo => photo_options[:photo_file], :object_id => object_id, :object_type => object_type})
-        when photo_options[:photo_url]
-          then perform_post_multi("/photos", :body => {:photo_url => photo_options[:photo_url], :object_id => object_id, :object_type => object_type})
-      end
-    end
-
 protected
 
     def self.mime_type(file)
@@ -84,6 +75,24 @@ protected
 
 
 private
+
+    def stringify(obj)
+      if obj.is_a? Hash
+        obj.each do |key, value|
+          obj.delete(key)
+          obj[key.to_s] = stringify(value)
+        end
+      elsif obj.is_a? Array
+        obj.collect {|e| stringify(e)}
+      else
+        obj.to_s
+      end
+    end
+
+    def tags_str(tags)
+      tags_str = (tags.is_a? Array) ? tags.join(",") : tags
+      tags_str
+    end
 
     def perform_get(path, options={})
       Hyperpublic::Request.get(self, path, options)

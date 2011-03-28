@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.version = Hyperpublic::VERSION
   gem.files = FileList['lib/**/*.rb', '[A-Z]*', 'spec/**/*'].to_a
-  gem.name = "hyperpublic-ruby-client"
+  gem.name = "hyperpublic_ruby"
   gem.homepage = "http://github.com/jumppost/hyperpublic_api_ruby"
   gem.license = "MIT"
   gem.summary = %Q{Client library for the hyperpublic api}

@@ -13,17 +13,8 @@ module Hyperpublic
       if params.is_a? Integer
         perform_get("/things/#{params}")
       else
-        query = {}
-        if (params[:ids])
-          query[:ids] = params[:ids]
-        elsif (params[:location])
-          query[:location] = params[:location]
-        elsif (params[:tags])
-          query[:tags] = params[:tags]
-        end
-
         q = Addressable::URI.new
-        q.query_values = query
+        q.query_values = stringify(params)
         perform_get("/things?#{q.query}")
       end
     end
@@ -80,12 +71,6 @@ module Hyperpublic
 
     def tags_update(id, tags)
       perform_put("/things/#{id}/tags", :body => {:tags => tags_str(tags)})
-    end
-
-private
-    def tags_str(tags)
-      tags_str = (tags.is_a? Array) ? tags.join(",") : tags
-      tags_str
     end
 
   end
