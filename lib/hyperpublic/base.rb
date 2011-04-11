@@ -89,9 +89,9 @@ private
       end
     end
 
-    def tags_str(tags)
-      tags_str = (tags.is_a? Array) ? tags.join(",") : tags
-      tags_str
+    def arr_str(tags)
+      arr_str = (tags.is_a? Array) ? tags.join(",") : tags
+      arr_str
     end
 
     def perform_get(path, options={})

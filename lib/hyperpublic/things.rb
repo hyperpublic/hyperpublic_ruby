@@ -21,7 +21,7 @@ module Hyperpublic
 
     def create(options={})
       raise Exception "this doesn't work yet!" if options[:image]
-      options[:tags] = tags_str(options[:tags]) if options[:tags].is_a? Array
+      options[:tags] = arr_str(options[:tags]) if options[:tags].is_a? Array
       perform_post("/things", :body => options)
     end
 
@@ -66,11 +66,11 @@ module Hyperpublic
     end
 
     def tags_create(id, tags)
-      perform_post("/things/#{id}/tags", :body => {:tags => tags_str(tags)})
+      perform_post("/things/#{id}/tags", :body => {:tags => arr_str(tags)})
     end
 
     def tags_update(id, tags)
-      perform_put("/things/#{id}/tags", :body => {:tags => tags_str(tags)})
+      perform_put("/things/#{id}/tags", :body => {:tags => arr_str(tags)})
     end
 
   end
