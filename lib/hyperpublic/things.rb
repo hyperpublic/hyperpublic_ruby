@@ -10,7 +10,7 @@ module Hyperpublic
     end
 
     def find(params)
-      if params.is_a? Integer
+      if params.is_a? String
         perform_get("/things/#{params}")
       else
         q = Addressable::URI.new

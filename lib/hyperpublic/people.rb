@@ -15,7 +15,7 @@ module Hyperpublic
     #   {:tags => [tag1, tags]}, or 
     #   {:location => {:lat=>35,:lon=>-70}}
     def find(params)
-      if params.is_a? Integer
+      if params.is_a? String
         perform_get("/people/#{params}")
       else
         q = Addressable::URI.new
