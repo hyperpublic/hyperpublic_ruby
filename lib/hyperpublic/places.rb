@@ -29,36 +29,8 @@ module Hyperpublic
       perform_get("/places/#{id}/locations")
     end
 
-    def addresses(id, options={})
-      perform_get("/places/#{id}/addresses")
-    end
-
-    def zipcodes(id, options={})
-      perform_get("/places/#{id}/zipcodes")
-    end
-
-    def neighborhoods(id, options={})
-      perform_get("/places/#{id}/neighborhoods")
-    end
-
-    def pindrops(id, options={})
-      perform_get("/places/#{id}/pindrops")
-    end
-
-    def address_create(id, options={})
-      perform_post("/places/#{id}/addresses", :body => options)
-    end
-
-    def zipcode_create(id, options={})
-      perform_post("/places/#{id}/zipcodes", :body => options)
-    end
-
-    def neighborhood_create(id, options={})
-      perform_post("/places/#{id}/neighborhoods", :body => options)
-    end
-
-    def pindrop_create(id, options={})
-      perform_post("/places/#{id}/pindrops", :body => options)
+    def location_create(id, options={})
+      perform_post("/places/#{id}/locations", :body => options)
     end
 
     def tags(id)

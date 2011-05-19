@@ -35,6 +35,7 @@ GEM
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
+    json (1.5.1)
     linecache (0.43)
     mime-types (1.16)
     multi_json (0.0.5)
@@ -84,6 +85,7 @@ DEPENDENCIES
   hashie (~> 1.0.0)
   httparty (~> 0.6.1)
   jeweler (~> 1.5.1)
+  json
   multi_json (~> 0.0.5)
   rest-client (~> 1.5.1)
   rspec-rails (>= 2.2.1)

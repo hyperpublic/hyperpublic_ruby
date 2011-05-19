@@ -1,6 +1,7 @@
 require 'addressable/uri'
 require 'oauth'
 require 'oauth/consumer'
+require 'json'
 require 'ruby-debug'
 
 module Hyperpublic
@@ -23,7 +24,8 @@ module Hyperpublic
         @consumer_options[:authorize_path] =  '/oauth/authenticate'
       end
       @auth_params = "client_id=#{@ctoken}&client_secret=#{@csecret}" + (@token.token.empty? ? "" : "&access_token=#{@token.token}")
-
+      @auth_params_hash = {"client_id" => @ctoken, "client_secret" => @csecret}
+      @auth_params_hash["access_token"] = @token.token unless @token.token.empty?
     end
 
     def get(uri, options={})
@@ -34,14 +36,15 @@ module Hyperpublic
 
     def post(uri, body, options={})
       body.merge!("client_id" => @ctoken, "client_secret" => @csecret)
-      @token.post(@api_endpoint + uri, body, {"Content-Type" => 'application/json'})
+      @token.post(@api_endpoint + uri, body.to_json, {"Content-Type" => 'application/json'})
     end
 
     def put(uri, body, options={})
       #for now, convert the body into the query parameter
-      q = Addressable::URI.new
-      q.query_values = body.merge("client_id" => @ctoken, "client_secret" => @csecret)
-      @token.put(@api_endpoint + uri + "?" + q.query,{})
+      #q = Addressable::URI.new
+      #q.query_values = body.merge("client_id" => @ctoken, "client_secret" => @csecret)
+      #@token.put(@api_endpoint + uri + "?" + q.query,{})
+      @token.put(@api_endpoint + uri, body.merge(@auth_params_hash).to_json, {'Content-Type' => 'application/json'})
     end
 
     def delete(uri, options={})

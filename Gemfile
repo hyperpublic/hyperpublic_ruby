@@ -17,8 +17,8 @@ group :development do
   gem "httparty", "~>0.6.1"
   gem "rest-client", "~>1.5.1"
   gem "multi_json", "~>0.0.5"
+  gem "json"
   gem "fakeweb", "~>1.3.0"
-  gem "ruby-debug"
   gem "yajl-ruby"
   #gem "rcov", ">= 0"
 end
