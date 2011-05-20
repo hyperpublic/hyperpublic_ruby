@@ -16,10 +16,10 @@ module Hyperpublic
     #   :sign_in => true to just sign in with hyperpublic instead of doing oauth authorization
     def initialize(ctoken, csecret, options={})
       @ctoken, @csecret, @consumer_options = ctoken, csecret, {}
-      @api_endpoint = options[:api_endpoint] || 'http://www.hyperpublic.com/api/v1'
+      @api_endpoint = options[:api_endpoint] || 'https://api.hyperpublic.com/api/v1'
       @consumer = ::OAuth::Consumer.new(ctoken, csecret, :site => @api_endpiont)
       @token = ::OAuth::AccessToken.new(@consumer)
-      @signing_endpoint = options[:signing_endpoint] || 'http://www.hyperpublic.com/api/v1'
+      @signing_endpoint = options[:signing_endpoint] || 'https://api.hyperpublic.com/api/v1'
       if options[:sign_in]
         @consumer_options[:authorize_path] =  '/oauth/authenticate'
       end

@@ -11,12 +11,12 @@ gem install hyperpublic-ruby
 
 Sample Usage
 ----------------
-    require 'hyperpublic-ruby'
+    require 'hyperpublic'
 
     auth = Hyperpublic::OAuth.new("key", "secret")
-    people_client = Hyperpublic::People.new(auth)
+    places_client = Hyperpublic::Places.new(auth)
 
-    person = people_client.find(4)
+    place = places_client.find("4dd53bffe2f2d70816000001")
 
 
 Documentation

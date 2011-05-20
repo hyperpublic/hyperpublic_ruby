@@ -36,7 +36,7 @@ module Hyperpublic
   end
 
   def self.api_endpoint
-    @api_endpoint ||= "localhost:3000/api/v#{self.api_version}"
+    @api_endpoint ||= "https://api.hyperpublic.com/api/v#{self.api_version}"
   end
 
   def self.api_endpoint=(value)
