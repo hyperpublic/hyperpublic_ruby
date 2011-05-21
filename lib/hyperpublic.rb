@@ -132,7 +132,6 @@ end
 directory = File.expand_path(File.dirname(__FILE__))
 
 require File.join(directory, "hyperpublic", "oauth")
-require File.join(directory, "hyperpublic", "auth")
 require File.join(directory, "hyperpublic", "request")
 require File.join(directory, "hyperpublic", "base")
 require File.join(directory, "hyperpublic", "people")
