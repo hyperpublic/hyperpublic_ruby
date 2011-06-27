@@ -20,5 +20,6 @@ group :development do
   gem "json"
   gem "fakeweb", "~>1.3.0"
   gem "yajl-ruby"
+  gem 'addressable'
   #gem "rcov", ">= 0"
 end
