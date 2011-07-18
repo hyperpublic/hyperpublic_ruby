@@ -2,7 +2,6 @@ require 'addressable/uri'
 require 'oauth'
 require 'oauth/consumer'
 require 'json'
-require 'ruby-debug'
 
 module Hyperpublic
   class OAuth
