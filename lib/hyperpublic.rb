@@ -1,5 +1,4 @@
 require "forwardable"
-#require "oauth"
 require "hashie"
 require "httparty"
 require "multi_json"

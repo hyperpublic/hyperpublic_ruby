@@ -13,8 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Provides easy access to the hyperpublic api}
   s.email = %q{etang@hyperpublic.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt",
-    "README.rdoc"
+    "LICENSE.txt"
   ]
   s.files = [
     "Gemfile",
