@@ -3,7 +3,6 @@ require "forwardable"
 require "hashie"
 require "httparty"
 require "multi_json"
-require 'ruby-debug'
 require 'openssl'
 
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE

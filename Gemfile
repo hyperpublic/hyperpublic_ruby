@@ -18,10 +18,9 @@ gem "yajl-ruby"
 gem 'addressable'
 
 group :development do
+  gem 'ruby-debug'
   gem "rspec-rails", ">= 2.2.1"
   gem 'autotest-growl'
   gem 'ZenTest'
-
-  gem 'ruby-debug'
   #gem "rcov", ">= 0"
 end
