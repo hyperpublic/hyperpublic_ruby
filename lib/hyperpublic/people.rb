@@ -24,12 +24,6 @@ module Hyperpublic
       end
     end
 
-    def search(params)
-      q = Addressable::URI.new
-      q.query_values = stringify(params)
-      perform_get("/people/search?#{q.query}")
-    end
-
     def create(options={})
       raise Exception "this doesn't work yet!" if options[:image]
       options[:q] = arr_str(options[:q]) if options[:q].is_a? Array

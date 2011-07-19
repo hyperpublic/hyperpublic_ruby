@@ -9,10 +9,10 @@ module Hyperpublic
       @client = client
     end
 
-    def search(params)
+    def find(params)
       q = Addressable::URI.new
       q.query_values = stringify(params)
-      perform_get("/all/search?#{q.query}")
+      perform_get("/all/index?#{q.query}")
     end
   end
 end
