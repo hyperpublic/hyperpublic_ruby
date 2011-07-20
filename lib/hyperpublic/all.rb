@@ -12,7 +12,7 @@ module Hyperpublic
     def find(params)
       q = Addressable::URI.new
       q.query_values = stringify(params)
-      perform_get("/all/index?#{q.query}")
+      perform_get("/all?#{q.query}")
     end
   end
 end
