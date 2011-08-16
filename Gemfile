@@ -6,12 +6,11 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 
-gem "bundler", "~> 1.0.0"
 gem "jeweler", "~> 1.5.1"
 gem "hashie", "~>1.0.0"
-gem "httparty", "~>0.6.1"
+gem "httparty", "~>0.7.8"
 gem "rest-client", "~>1.5.1"
-gem "multi_json", "~>0.0.5"
+gem "multi_json", "~>1.0.3"
 gem "json"
 gem "fakeweb", "~>1.3.0"
 gem "yajl-ruby"
