@@ -18,30 +18,25 @@ RSpec.configure do |config|
 
 end
 
-def hyperpublic_url(auth, url)
-  if auth.auth[:username] && auth.auth[:password]
-    url =~ /^http/ ? url : "http://#{auth.auth[:username]}:#{auth.auth[:password]}@www.hyperpublic.com/api/v1/#{url}" 
-  else
-    url =~ /^http/ ? url : "http://www.hyperpublic.com/api/v1/#{url}"
-  end
+def hyperpublic_url(auth, url, req)
+  url =~ /^http/ ? url : "https://api.hyperpublic.com/api/v1/#{(url[-1,1] == "?" || req != "get") ? url : url+'&' }" + ((req == "get") ? "client_id=#{auth.ctoken}&client_secret=#{auth.csecret}" : "")
 end
 
 def stub_get(auth, url, result, status=nil)
-  test = hyperpublic_url(auth, url)
   options = {:body => result}
   options.merge!({:status => status}) unless status.nil?
-  FakeWeb.register_uri(:get, hyperpublic_url(auth, url), options)
+  FakeWeb.register_uri(:get, hyperpublic_url(auth, url, "get"), options)
 end
 
 def stub_post(auth, url, result)
-  FakeWeb.register_uri(:post, hyperpublic_url(auth, url), :body => result)
+  FakeWeb.register_uri(:post, hyperpublic_url(auth, url, "post"), :body => result)
 end
 
 def stub_put(auth, url, result)
-  FakeWeb.register_uri(:put, hyperpublic_url(auth, url), :body => result)
+  FakeWeb.register_uri(:put, hyperpublic_url(auth, url, "put"), :body => result)
 end
 
 def stub_delete(auth, url, result)
-  FakeWeb.register_uri(:delete, hyperpublic_url(auth, url), :body => result)
+  FakeWeb.register_uri(:delete, hyperpublic_url(auth, url, "delete"), :body => result)
 end
 

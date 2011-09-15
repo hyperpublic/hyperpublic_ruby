@@ -137,7 +137,3 @@ require File.join(directory, "hyperpublic", "all")
 require File.join(directory, "hyperpublic", "things")
 require File.join(directory, "hyperpublic", "places")
 require File.join(directory, "hyperpublic", "version")
-#require File.join(directory, "hyperpublic", "search")
-#require File.join(directory, "hyperpublic", "trends")
-#require File.join(directory, "hyperpublic", "geo")
-
