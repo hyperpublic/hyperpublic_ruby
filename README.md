@@ -1,16 +1,17 @@
-The Hyperpublic Ruby Gem
+#The Hyperpublic Ruby Gem
 ======================
 
 A Ruby wrapper for the Hyperpublic REST API
 
 
-Installation
+#Installation
 ----------------
     gem install hyperpublic_ruby
 
 
-Sample Usage
+#Sample Usage
 ----------------
+###Working with Places
     require 'hyperpublic'
 
     auth = Hyperpublic::OAuth.new("your_key", "your_secret")
@@ -40,10 +41,12 @@ Sample Usage
                           :lon => -74.007})
 
 
+###Working with Categories
     #get a list of categories
     categories_client = Hyperpublic::Categories.new(auth)
     categories = categories_client.find
 
-Documentation
+
+#Documentation
 ---------------
 visit our [developer site](http://developer.hyperpublic.com) for more information.
