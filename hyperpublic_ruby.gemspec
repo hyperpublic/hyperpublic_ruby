@@ -4,14 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{hyperpublic_ruby}
+  s.name = %q{hyperpublic}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["eric.x.tang@gmail.com"]
   s.date = %q{2011-01-06}
-  s.description = %q{Provides easy access to the hyperpublic api}
-  s.email = %q{etang@hyperpublic.com}
+  s.description = %q{Easy access to the hyperpublic api}
   s.extra_rdoc_files = [
     "LICENSE.txt"
   ]
