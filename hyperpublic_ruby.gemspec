@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["etang@hyperpublic.com"]
+  s.authors = ["eric.x.tang@gmail.com"]
   s.date = %q{2011-01-06}
   s.description = %q{Provides easy access to the hyperpublic api}
   s.email = %q{etang@hyperpublic.com}
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/hyperpublic/version.rb",
     "lib/hyperpublic/people.rb",
     "lib/hyperpublic/places.rb",
+    "lib/hyperpublic/categories.rb",
     "lib/hyperpublic/things.rb",
     "lib/hyperpublic/all.rb",
     "spec/hyperpublic/base_spec.rb",

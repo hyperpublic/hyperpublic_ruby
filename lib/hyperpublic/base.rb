@@ -85,7 +85,7 @@ private
       elsif obj.is_a? Array
         obj.collect {|e| stringify(e)}
       else
-        obj.to_s
+        obj.to_s if obj
       end
     end
 
