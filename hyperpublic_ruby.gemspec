@@ -4,86 +4,104 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{hyperpublic}
+  s.name = %q{hyperpublic_ruby}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["eric.x.tang@gmail.com"]
-  s.date = %q{2011-01-06}
-  s.description = %q{Easy access to the hyperpublic api}
+  s.authors = [%q{etang}]
+  s.date = %q{2011-09-17}
+  s.description = %q{Provides easy access to the hyperpublic api}
+  s.email = %q{etang@hyperpublic.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt"
+    "LICENSE.txt",
+    "README.md"
   ]
   s.files = [
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
+    "README.md",
     "Rakefile",
     "lib/hyperpublic.rb",
+    "lib/hyperpublic/all.rb",
     "lib/hyperpublic/base.rb",
+    "lib/hyperpublic/categories.rb",
     "lib/hyperpublic/oauth.rb",
-    "lib/hyperpublic/request.rb",
-    "lib/hyperpublic/version.rb",
+    "lib/hyperpublic/offers.rb",
     "lib/hyperpublic/people.rb",
     "lib/hyperpublic/places.rb",
-    "lib/hyperpublic/categories.rb",
+    "lib/hyperpublic/request.rb",
     "lib/hyperpublic/things.rb",
-    "lib/hyperpublic/all.rb",
+    "lib/hyperpublic/version.rb",
     "spec/hyperpublic/base_spec.rb",
+    "spec/hyperpublic/people_spec.rb",
+    "spec/hyperpublic/places_spec.rb",
     "spec/hyperpublic/request_spec.rb",
+    "spec/hyperpublic/things_spec.rb",
     "spec/hyperpublic_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/hyperpublic/hyperpublic_ruby}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.homepage = %q{http://github.com/jumppost/hyperpublic_api_ruby}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.5}
   s.summary = %q{Client library for the hyperpublic api}
   s.test_files = [
     "spec/hyperpublic/base_spec.rb",
+    "spec/hyperpublic/people_spec.rb",
+    "spec/hyperpublic/places_spec.rb",
     "spec/hyperpublic/request_spec.rb",
+    "spec/hyperpublic/things_spec.rb",
     "spec/hyperpublic_spec.rb",
     "spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.1"])
-      s.add_development_dependency(%q<hashie>, ["~> 0.4.0"])
-      s.add_development_dependency(%q<httparty>, ["~> 0.6.1"])
-      s.add_development_dependency(%q<rest-client>, ["~> 1.5.1"])
-      s.add_development_dependency(%q<multi_json>, ["~> 0.0.5"])
-      s.add_development_dependency(%q<fakeweb>, ["~> 1.3.0"])
+      s.add_runtime_dependency(%q<jeweler>, ["~> 1.5.1"])
+      s.add_runtime_dependency(%q<hashie>, ["~> 1.1.0"])
+      s.add_runtime_dependency(%q<httparty>, ["~> 0.7.8"])
+      s.add_runtime_dependency(%q<rest-client>, ["~> 1.5.1"])
+      s.add_runtime_dependency(%q<multi_json>, ["~> 1.0.3"])
+      s.add_runtime_dependency(%q<json>, [">= 0"])
+      s.add_runtime_dependency(%q<fakeweb>, ["~> 1.3.0"])
+      s.add_runtime_dependency(%q<yajl-ruby>, [">= 0"])
+      s.add_runtime_dependency(%q<addressable>, [">= 0"])
       s.add_development_dependency(%q<ruby-debug>, [">= 0"])
-      s.add_development_dependency(%q<yajl-ruby>, [">= 0"])
+      s.add_development_dependency(%q<rspec-rails>, [">= 2.2.1"])
+      s.add_development_dependency(%q<autotest-growl>, [">= 0"])
+      s.add_development_dependency(%q<ZenTest>, [">= 0"])
     else
-      s.add_dependency(%q<rspec>, ["~> 2.3.0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
-      s.add_dependency(%q<hashie>, ["~> 0.4.0"])
-      s.add_dependency(%q<httparty>, ["~> 0.6.1"])
+      s.add_dependency(%q<hashie>, ["~> 1.1.0"])
+      s.add_dependency(%q<httparty>, ["~> 0.7.8"])
       s.add_dependency(%q<rest-client>, ["~> 1.5.1"])
-      s.add_dependency(%q<multi_json>, ["~> 0.0.5"])
+      s.add_dependency(%q<multi_json>, ["~> 1.0.3"])
+      s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<fakeweb>, ["~> 1.3.0"])
-      s.add_dependency(%q<ruby-debug>, [">= 0"])
       s.add_dependency(%q<yajl-ruby>, [">= 0"])
+      s.add_dependency(%q<addressable>, [">= 0"])
+      s.add_dependency(%q<ruby-debug>, [">= 0"])
+      s.add_dependency(%q<rspec-rails>, [">= 2.2.1"])
+      s.add_dependency(%q<autotest-growl>, [">= 0"])
+      s.add_dependency(%q<ZenTest>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rspec>, ["~> 2.3.0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
-    s.add_dependency(%q<hashie>, ["~> 0.4.0"])
-    s.add_dependency(%q<httparty>, ["~> 0.6.1"])
+    s.add_dependency(%q<hashie>, ["~> 1.1.0"])
+    s.add_dependency(%q<httparty>, ["~> 0.7.8"])
     s.add_dependency(%q<rest-client>, ["~> 1.5.1"])
-    s.add_dependency(%q<multi_json>, ["~> 0.0.5"])
+    s.add_dependency(%q<multi_json>, ["~> 1.0.3"])
+    s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<fakeweb>, ["~> 1.3.0"])
-    s.add_dependency(%q<ruby-debug>, [">= 0"])
     s.add_dependency(%q<yajl-ruby>, [">= 0"])
+    s.add_dependency(%q<addressable>, [">= 0"])
+    s.add_dependency(%q<ruby-debug>, [">= 0"])
+    s.add_dependency(%q<rspec-rails>, [">= 2.2.1"])
+    s.add_dependency(%q<autotest-growl>, [">= 0"])
+    s.add_dependency(%q<ZenTest>, [">= 0"])
   end
 end
 
