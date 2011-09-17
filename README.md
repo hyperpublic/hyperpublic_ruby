@@ -60,10 +60,10 @@ Sample Usage
 
 
 ###Working with Categories
-      categories_client = Hyperpublic::Categories.new(auth)
+    categories_client = Hyperpublic::Categories.new(auth)
 
-      # get a list of categories
-      categories = categories_client.find
+    # get a list of categories
+    categories = categories_client.find
 
 
 Documentation
