@@ -84,7 +84,9 @@ module Hyperpublic
         data = parse(response)
         raise General.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
       when 404
-        raise NotFound, "(#{response.code}): #{response.message}"
+        data = parse(response)
+        raise NotFound, "(#{response.code}): #{response.message}" +
+                        (data ? " - " + data['error'] : "")
       when 500..503
         raise Unavailable, "(#{response.code}): #{response.message}"
     end
