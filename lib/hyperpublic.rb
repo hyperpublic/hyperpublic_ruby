@@ -85,7 +85,7 @@ module Hyperpublic
         raise General.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
       when 404
         raise NotFound, "(#{response.code}): #{response.message}"
-      when 502..503
+      when 500..503
         raise Unavailable, "(#{response.code}): #{response.message}"
     end
   end
