@@ -6,7 +6,7 @@ A Ruby wrapper for the Hyperpublic REST API
 
 Installation
 -------------
-    gem install hyperpublic_ruby
+    gem install hyperpublic
 
 
 Sample Usage
