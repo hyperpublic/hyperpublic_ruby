@@ -15,11 +15,11 @@ gem "json"
 gem "fakeweb", "~>1.3.0"
 gem "yajl-ruby"
 gem 'addressable'
+gem "oauth"
 
 group :development do
-  gem 'ruby-debug'
   gem "rspec-rails", ">= 2.2.1"
   gem 'autotest-growl'
-  gem 'ZenTest'
+  gem 'ZenTest', ">= 4.6.2"
   #gem "rcov", ">= 0"
 end

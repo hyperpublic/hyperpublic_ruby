@@ -78,10 +78,11 @@ private
 
     def stringify(obj)
       if obj.is_a? Hash
-        obj.each do |key, value|
+        obj.dup.each do |key, value|
           obj.delete(key)
           obj[key.to_s] = stringify(value)
         end
+        obj
       elsif obj.is_a? Array
         obj.collect {|e| stringify(e)}
       else

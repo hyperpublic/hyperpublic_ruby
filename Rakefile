@@ -1,4 +1,4 @@
-require 'lib/hyperpublic/version.rb'
+require File.join(File.dirname(__FILE__), 'lib/hyperpublic/version.rb')
 require 'rubygems'
 require 'bundler'
 
@@ -16,8 +16,8 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.version = Hyperpublic::VERSION
   gem.files = FileList['lib/**/*.rb', '[A-Z]*', 'spec/**/*'].to_a
-  gem.name = "hyperpublic_ruby"
-  gem.homepage = "http://github.com/jumppost/hyperpublic_api_ruby"
+  gem.name = "hyperpublic"
+  gem.homepage = "http://github.com/hyperpublic/hyperpublic_ruby"
   gem.license = "MIT"
   gem.summary = %Q{Client library for the hyperpublic api}
   gem.description = %Q{Provides easy access to the hyperpublic api}

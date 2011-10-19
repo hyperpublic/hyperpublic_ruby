@@ -17,5 +17,10 @@ describe Hyperpublic::Base do
       @hyperpublic.post("/foo", {:bar => "baz"})
     end
 
+    it "should not raise an exception on the call to stringify" do
+      hash = {:this => "is", :a => "test"}
+      lambda {@hyperpublic.send(:stringify, hash)}.should_not raise_exception
+    end
+
   end
 end
