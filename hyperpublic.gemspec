@@ -72,7 +72,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<oauth>, [">= 0"])
       s.add_development_dependency(%q<rspec-rails>, [">= 2.2.1"])
       s.add_development_dependency(%q<autotest-growl>, [">= 0"])
-      s.add_development_dependency(%q<ZenTest>, [">= 0"])
+      s.add_development_dependency(%q<ZenTest>, [">= 4.6.2"])
     else
       s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
       s.add_dependency(%q<hashie>, ["~> 1.1.0"])
@@ -86,7 +86,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<oauth>, [">= 0"])
       s.add_dependency(%q<rspec-rails>, [">= 2.2.1"])
       s.add_dependency(%q<autotest-growl>, [">= 0"])
-      s.add_dependency(%q<ZenTest>, [">= 0"])
+      s.add_dependency(%q<ZenTest>, [">= 4.6.2"])
     end
   else
     s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
@@ -101,7 +101,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<oauth>, [">= 0"])
     s.add_dependency(%q<rspec-rails>, [">= 2.2.1"])
     s.add_dependency(%q<autotest-growl>, [">= 0"])
-    s.add_dependency(%q<ZenTest>, [">= 0"])
+    s.add_dependency(%q<ZenTest>, [">= 4.6.2"])
   end
 end
 
